@@ -28,6 +28,12 @@ ul {
   padding: 0;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 body {
   font-family: var(--main-font);
   background-color: var(--main-background-color);
@@ -59,10 +65,6 @@ header {
   align-items: center;
 }
 
-.main-nav {
-  justify-content: space-between;
-}
-
 .top-nav-item:not(:last-child) {
   margin-right: 50px;
 }
@@ -73,6 +75,9 @@ header {
   margin-left: 50px;
 }
 
+.top-contacts {
+  margin-left: auto;
+}
 .logo {
   font-family: var(--secondary-font);
   font-weight: 700;
@@ -304,12 +309,17 @@ footer {
 
 .portfolio-main-btn {
   font-family: var(--main-font);
+  padding: 6px 22px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
   color: var(--title-text-color);
   background-color: var(--section-bacground-color);
   cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio-main-btn:hover,
@@ -319,11 +329,17 @@ footer {
 }
 
 /* portfolio examples */
-
-.flex {
+.example-card {
   display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
 }
 
+.main-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
 .main-title {
   width: 1px;
   height: 1px;
@@ -331,6 +347,9 @@ footer {
   opacity: 0;
 }
 
+.main-item + .main-item {
+  margin-left: 8px;
+}
 .example-title {
   color: var(--title-text-color);
 }
@@ -354,12 +373,14 @@ footer {
 }
 
 .card-portfolio {
-  width: 370px;
+  flex-basis: calc((100% - 90px) / 3);
+  margin-left: 30px;
+  margin-bottom: 30px;
   border: 1px solid #eeeeee;
 }
 
 .portfolio-card-description {
   /* margin-left: 24px;
   margin-right: 24px; */
-  margin: 20px 24px;
+  padding: 20px 24px;
 }
