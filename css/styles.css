@@ -3,8 +3,8 @@
   --title-text-color: #212121;
   --accent-color: #2196f3;
   --main-bacground-color: #ffffff;
-  --main-font: "Roboto", sans-serif;
-  --secondary-font: "Raleway", sans-serif;
+  --main-font: Roboto, sans-serif;
+  --secondary-font: Raleway, sans-serif;
   --footer-color: #2f303a;
   --section-bacground-color: #f5f4fa;
 }
@@ -16,6 +16,17 @@
 .link {
   text-decoration: none;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: var(--main-font);
@@ -24,10 +35,41 @@ body {
   font-size: 14px;
   letter-spacing: 0.03em;
 }
+.container {
+  width: 1200px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 0 auto;
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
 /* Header */
 
 header {
   background-color: var(--main-bacground-color);
+}
+.main-nav,
+.top-nav,
+.top-contacts {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav {
+  justify-content: space-between;
+}
+
+.top-nav-item:not(:last-child) {
+  margin-right: 50px;
+}
+.logo {
+  margin-right: 93px;
+}
+.top-contacts .item + .item {
+  margin-left: 50px;
 }
 
 .logo {
@@ -36,7 +78,6 @@ header {
   font-size: 26px;
   line-height: 1.19;
   letter-spacing: 0.03em;
-
   color: var(--title-text-color);
 }
 
@@ -45,8 +86,9 @@ header {
 }
 
 .top-nav .link {
+  padding-top: 32px;
+  padding-bottom: 32px;
   color: var(--title-text-color);
-
   font-family: var(--main-font);
   font-weight: 500;
   font-size: 14px;
@@ -71,19 +113,29 @@ header {
 }
 /* hero */
 
-.hero > h1 {
+.hero {
+  background-color: var(--footer-color);
+  text-align: center;
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+.hero-title {
+  margin: 0 auto 30px;
+  max-width: 696px;
   font-family: var(--main-font);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-
-  background-color: var(--footer-color);
   color: var(--main-bacground-color);
 }
 
 .hero-btn {
+  display: inline-block;
+  padding: 10px 32px;
+  border-radius: 4px;
+  border: none;
   font-family: var(--main-font);
   font-weight: 700;
   font-size: 16px;
@@ -92,28 +144,62 @@ header {
   background: var(--accent-color);
   color: var(--main-bacground-color);
   cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 /* Features */
 
+.features-title {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.features-list {
+  display: flex;
+}
+
+.features-list .item {
+  width: 270px;
+}
+.item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.item .title {
+  margin-bottom: 10px;
+}
+
 .features-list .title {
   font-weight: 700;
+  font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
   color: var(--title-text-color);
 }
 
 .features-list .features-description {
-  line-height: 1.17;
+  line-height: 1.71;
   letter-spacing: 0.03em;
 }
 
-/* aboutUs */
+/* about */
+.about {
+  display: flex;
+  justify-content: space-between;
+}
+.section.no-padding {
+  padding-top: 0;
+}
+
 .about-us-title {
+  text-align: center;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
   color: var(--title-text-color);
+  margin-bottom: 50px;
 }
 
 /* team */
@@ -123,13 +209,19 @@ header {
 }
 
 .team-title {
+  text-align: center;
+  margin-bottom: 50px;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
   color: var(--title-text-color);
 }
+.team-list {
+  display: flex;
+}
 
 .team-list-item {
+  width: 270px;
   background-color: var(--main-bacground-color);
 }
 
@@ -137,7 +229,21 @@ header {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
+  margin-bottom: 10px;
+  text-align: center;
   color: var(--title-text-color);
+}
+
+.team-list-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.team-foto {
+  margin-bottom: 30px;
+}
+.team-list-item .text {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 /* footer */
@@ -147,12 +253,32 @@ footer {
   color: var(--main-bacground-color);
 }
 
+.footer-main {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
 .footer-logo {
+  display: block;
   font-family: var(--secondary-font);
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
   color: var(--main-bacground-color);
+  margin-bottom: 20px;
+}
+
+.footer-nav .link {
+  display: block;
+}
+
+.footer-location {
+  display: block;
+  margin-bottom: 9px;
+}
+
+.footer-nav .link {
+  margin-bottom: 9px;
 }
 
 .footer-location,
