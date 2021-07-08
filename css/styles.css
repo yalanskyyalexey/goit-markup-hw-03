@@ -50,6 +50,7 @@ body {
 
 header {
   background-color: var(--main-bacground-color);
+  border-bottom: 1px solid #ececec;
 }
 .main-nav,
 .top-nav,
@@ -223,6 +224,9 @@ header {
 .team-list-item {
   width: 270px;
   background-color: var(--main-bacground-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 
 .team-list .title {
@@ -238,12 +242,10 @@ header {
   margin-right: 30px;
 }
 
-.team-foto {
-  margin-bottom: 30px;
-}
-.team-list-item .text {
+.card-content {
   text-align: center;
-  margin-bottom: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 /* footer */
@@ -318,6 +320,17 @@ footer {
 
 /* portfolio examples */
 
+.flex {
+  display: flex;
+}
+
+.main-title {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
 .example-title {
   color: var(--title-text-color);
 }
@@ -327,8 +340,26 @@ footer {
   line-height: 2;
   letter-spacing: 0.06em;
 }
+.example-title-hide {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
 .example-description {
   font-size: 16px;
   line-height: 1.87;
   color: var(--main-text-color);
+}
+
+.card-portfolio {
+  width: 370px;
+  border: 1px solid #eeeeee;
+}
+
+.portfolio-card-description {
+  /* margin-left: 24px;
+  margin-right: 24px; */
+  margin: 20px 24px;
 }
